@@ -1,0 +1,2 @@
+com/singlePage/SinglePageApplication.java
+ com.singlePage.SinglePageApplication
