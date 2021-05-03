@@ -20,7 +20,7 @@ globFunc.test = function (message) {
     } else {
         alert('예 라고 쓰십시오 좆간.');
         ans = 'true';
-        globFunc.test(ans);
+        globFunc.callTest(ans);
 
     }
 };
