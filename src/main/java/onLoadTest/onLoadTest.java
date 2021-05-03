@@ -2,5 +2,5 @@ package onLoadTest;
 
 public class onLoadTest {
     //contents
-    String test = "onLoad";
+    String t = "onLoad";
 }
