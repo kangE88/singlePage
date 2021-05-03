@@ -1,6 +1,6 @@
-let globFunc = {};
+const globFunc = {};
 
 globFunc.test = function() {
-    let locVar = 'loc';
+    let locVar = "loc";
     alert("야발");
 }
