@@ -8,19 +8,19 @@ globFunc.test = function (message) {
     console.log("현재 테스트 환경은 : " + locVar);
 
     if(prompt('우리혁 화이팅이라고 외치시겠습니까?(예,아니오)') === '예') {
-        ans = confirm('globFunc.callTest를 실행합니다.');
+        ans = confirm('globFunc.callTest 타입을 테스트 합니다. (f12 console.log)');
         if(true === ans) {
             globFunc.callTest(ans);
 
         } else {
-            alert('종료');
+            ans = 'true';
+            globFunc.callTest(ans);
 
         }
 
     } else {
         alert('예 라고 쓰십시오 좆간.');
-        ans = 'true';
-        globFunc.callTest(ans);
+        globFunc.test();
 
     }
 };
