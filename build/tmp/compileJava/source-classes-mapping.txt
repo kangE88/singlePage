@@ -1,2 +1,4 @@
 com/singlePage/SinglePageApplication.java
  com.singlePage.SinglePageApplication
+onLoadTest/onLoadTest.java
+ onLoadTest.onLoadTest
