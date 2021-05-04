@@ -23,7 +23,7 @@ globFunc.test = function (message) {
         globFunc.test();
 
     }
-};
+}; // end globFunc.test = function (message)
 
 /**
  * function call test
@@ -48,3 +48,11 @@ globFunc.jsonTest = function(info) {
     }
 
 }; // end globFunc.jsonTest = function(info)
+
+/**
+ * test
+ */
+globFunc.dummy = function(info) {
+
+
+}; // end globFunc.dummy = function(info)
