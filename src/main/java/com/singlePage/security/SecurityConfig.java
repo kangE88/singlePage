@@ -1,6 +1,6 @@
-package com.security;
+package com.singlePage.security;
 
-import com.services.CustomUserDetailService;
+import com.singlePage.services.CustomUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -16,7 +16,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
-@ComponentScan(basePackages = { "com.security" })
+@ComponentScan(basePackages = {"com.singlePage.security"})
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired

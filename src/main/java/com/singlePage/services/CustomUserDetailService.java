@@ -1,9 +1,9 @@
-package com.services;
+package com.singlePage.services;
 
-import com.repo.RoleRepository;
-import com.repo.UserRepository;
-import com.vo.Role;
-import com.vo.User;
+import com.singlePage.repo.RoleRepository;
+import com.singlePage.repo.UserRepository;
+import com.singlePage.vo.Role;
+import com.singlePage.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -57,11 +57,10 @@ public class CustomUserDetailService implements UserDetailsService {
         });
 
         List<GrantedAuthority> grantedAuthorities = new ArrayList<>(roles);
-
         return grantedAuthorities;
     }
 
-    private UserDetails buildUserForAuthentication(User user, List<GrantedAuthority> authorities){
+    private UserDetails buildUserForAuthentication(User user, List<GrantedAuthority> authorities) {
         return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), authorities);
     }
 }

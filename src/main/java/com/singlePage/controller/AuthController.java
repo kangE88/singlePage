@@ -1,7 +1,7 @@
-package com.controller;
+package com.singlePage.controller;
 
-import com.services.CustomUserDetailService;
-import com.vo.User;
+import com.singlePage.services.CustomUserDetailService;
+import com.singlePage.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

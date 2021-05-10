@@ -1,7 +1,7 @@
-package com.repo;
+package com.singlePage.repo;
 
 
-import com.vo.Role;
+import com.singlePage.vo.Role;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface RoleRepository extends MongoRepository<Role, String> {

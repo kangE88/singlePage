@@ -1,4 +1,4 @@
-package com.vo;
+package com.singlePage.vo;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.IndexDirection;

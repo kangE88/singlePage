@@ -1,4 +1,4 @@
-package com.vo;
+package com.singlePage.vo;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.IndexDirection;
@@ -60,11 +60,11 @@ public class User {
         this.enabled = enabled;
     }
 
-    public Set<com.vo.Role> getRoles() {
+    public Set<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<com.vo.Role> roles) {
+    public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
 }
