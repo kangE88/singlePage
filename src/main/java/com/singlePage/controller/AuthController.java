@@ -48,6 +48,7 @@ public class AuthController {
             modelAndView.addObject("successMessage", "User has been registered successfully");
             modelAndView.addObject("user", new User());
             modelAndView.setViewName("login");
+            System.out.println("커밋 푸시 잊지마!!");
 
         }
         return modelAndView;
