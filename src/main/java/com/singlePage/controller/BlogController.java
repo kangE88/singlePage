@@ -8,8 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class BlogController {
 
-    @RequestMapping(value = "/kangPage", method = RequestMethod.GET)
-    public ModelAndView blogPage(){
+    @RequestMapping(value = "/dashboard/kangPage", method = RequestMethod.GET)
+    public ModelAndView kangPage(){
         ModelAndView mav = new ModelAndView();
         mav.setViewName("kangPage");
         return mav;
