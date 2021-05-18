@@ -10,6 +10,23 @@
 <body>
 <div layout:fragment="content">
     <p>Kang's Page</p>
+
+    <table id="userTable">
+        <thead>
+        <tr>
+            <th>title</th>
+            <th>content</th>
+            <th>author</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="post : ${posts}">
+            <td th:text="${post.title}">title</td>
+            <td th:text="${post.content}">content</td>
+            <td th:text="${post.author}">author</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>

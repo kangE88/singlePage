@@ -42,4 +42,12 @@ public class Posts {
         this.title = title;
         this.content = content;
     }
+
+    public Posts toDocument() {
+        return Posts.builder()
+                .title(title)
+                .content(content)
+                .author(author)
+                .build();
+    }
 }
