@@ -15,16 +15,18 @@ import java.util.List;
 @RestController
 public class PostController {
 
+    private final PostService postsService;
+
     @RequestMapping(value = "/dashboard/kangPage", method = RequestMethod.GET)
     public ModelAndView kangPage(Model model){
+        //List<PostsListResponseDto> posts = postsService.findAll();
         List<PostsListResponseDto> posts = postsService.findAll();
         ModelAndView mav = new ModelAndView();
-        model.addAttribute("posts", posts);
+        //model.addAttribute("posts", posts);
+        System.out.println(findAll().toString());
         mav.setViewName("dashboard/kangPage");
         return mav;
     }
-
-    private final PostService postsService;
 
     @PostMapping("/posts")
     public Long save(@RequestBody PostsSaveRequestDto requestDto) {

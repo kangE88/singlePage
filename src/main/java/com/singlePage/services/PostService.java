@@ -40,6 +40,7 @@ public class PostService {
     // 글 목록
     @Transactional(readOnly = true)
     public List<PostsListResponseDto> findAll() {
+        System.out.println("findAll in");
         return postsRepository.findAll().stream()
                 .map(PostsListResponseDto::new)
                 .collect(Collectors.toList());
