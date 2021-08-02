@@ -1,5 +1,6 @@
 package com.singlePage.controller;
 
+import com.singlePage.repo.PostRepository;
 import com.singlePage.services.CustomUserDetailService;
 import com.singlePage.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class AuthController {
 
     @Autowired
     private CustomUserDetailService userService;
+
+    @Autowired
+    private PostRepository postRepository;
 
     public ModelAndView login() {
         ModelAndView modelAndView = new ModelAndView();
@@ -62,6 +66,7 @@ public class AuthController {
         modelAndView.addObject("currentUser", user);
         modelAndView.addObject("fullName", "Welcome " + user.getFullname());
         modelAndView.addObject("adminMessage", "Content Available Only for Users with Admin Role");
+        modelAndView.addObject("posts", postRepository.findAll());
         modelAndView.setViewName("dashboard");
         return modelAndView;
     }

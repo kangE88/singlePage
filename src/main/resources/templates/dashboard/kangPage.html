@@ -11,13 +11,13 @@
 <div layout:fragment="content">
     <p>Kang's Page</p>
 
-    <table id="userTable">
+    <table id="postsTable">
         <thead>
         <tr>
-            <th>title</th>
-            <th>content</th>
-            <th>author</th>
-        </tr>
+        <th>title</th>
+        <th>content</th>
+        <th>author</th>
+    </tr>
         </thead>
         <tbody>
         <tr th:each="post : ${posts}">
