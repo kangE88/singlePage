@@ -52,10 +52,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/signup").permitAll()
                 .antMatchers("/dashboard/**").hasAnyAuthority("ADMIN").anyRequest()
                 .authenticated().and().csrf().disable().formLogin().successHandler(customizeauthenticationSuccessHandler)
-                .loginPage("/login").failureUrl("/login?error=true")
-                .usernameParameter("email")
-                .passwordParameter("password")
-                .and().logout()
+                .loginPage("/login").failureUrl("/login?error=true") //로그인 페이지 설정
+                .usernameParameter("email") // 유저 이름 파라미터
+                .passwordParameter("password") // 유저 패스워드 파라미터
+                .and()
+                .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessUrl("/").and().exceptionHandling();
     }
