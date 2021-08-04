@@ -56,9 +56,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("email") // 유저 이름 파라미터
                 .passwordParameter("password") // 유저 패스워드 파라미터
                 .and()
-                .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/").and().exceptionHandling();
+                .logout() // 로그아웃 설정
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout")) //로그아웃 시 URL
+                .logoutSuccessUrl("/").and().exceptionHandling(); // 로그아웃 성공 시 URL  and Exception 시 핸들링
     }
 
     @Override
