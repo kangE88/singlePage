@@ -58,7 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout() // 로그아웃 설정
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout")) //로그아웃 시 URL
-                .logoutSuccessUrl("/").and().exceptionHandling(); // 로그아웃 성공 시 URL  and Exception 시 핸들링
+                .logoutSuccessUrl("/").and().exceptionHandling(); // 로그아웃 성공 시 URL  and Exception 시 핸들링 이벤트
     }
 
     @Override
