@@ -14,11 +14,13 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 public class PostController {
 
-    @Autowired
-    private PostRepository postRepository;
+    private final PostRepository postRepository;
+    private final CustomUserDetailService userService;
 
-    @Autowired
-    private CustomUserDetailService userService;
+    public PostController(PostRepository postRepository, CustomUserDetailService userService) {
+        this.postRepository = postRepository;
+        this.userService = userService;
+    }
 
 //    public PostController(CustomUserDetailService userService, PostRepository postRepository){
 //        this.userService = new CustomUserDetailService();
