@@ -1,21 +1,30 @@
 package com.singlePage.controller;
 
 import com.singlePage.repo.PostRepository;
+import com.singlePage.services.CustomUserDetailService;
+import com.singlePage.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
-@RequestMapping("/api")
 public class PostController {
 
     @Autowired
     private PostRepository postRepository;
 
-    public PostController(PostRepository postRepository) {
-        this.postRepository = postRepository;
-    }
+    @Autowired
+    private CustomUserDetailService userService;
+
+//    public PostController(CustomUserDetailService userService, PostRepository postRepository){
+//        this.userService = new CustomUserDetailService();
+//        this.postRepository = postRepository;
+//    }
+
 //
 //    @GetMapping("/posts")
 //    public ResponseEntity<List<Post>> getAllPosts(@RequestParam(required = false) String title){
@@ -38,10 +47,16 @@ public class PostController {
 //    }
 
     @RequestMapping("/dashboard/kangPage")
-    public String kangPage(Model model){
+    public ModelAndView kangPage(Model model){
+        ModelAndView modelAndView = new ModelAndView();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = userService.findUserByEmail(auth.getName());
+        modelAndView.addObject("currentUser", user);
         model.addAttribute("posts", postRepository.findAll());
-        System.out.println("findALL >>>>"+postRepository.findAll().toString());
-        return "/dashboard/kangPage";
+        System.out.println(new StringBuilder().append("findALL >>>>").append(postRepository.findAll().toString()).toString());
+        //return "/dashboard/kangPage";
+        modelAndView.setViewName("dashboard/kangPage");
+        return modelAndView;
     }
 //
 //    @PostMapping("/posts")
