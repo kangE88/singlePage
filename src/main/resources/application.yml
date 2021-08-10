@@ -1,4 +1,0 @@
-spring:
-  data:
-    mongodb:
-      uri: mongodb+srv://kang:kang88@singlepage-cluster.50d38.mongodb.net/db01?retryWrites=true
