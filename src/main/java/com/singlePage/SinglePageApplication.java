@@ -6,17 +6,22 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class SinglePageApplication {
+
 	public static void main(String[] args) {
-			SpringApplication.run(SinglePageApplication.class, args);
+		//SpringApplication.run(SinglePageApplication.class, args);
+		String PROPERTIES = "spring.config.location=classpath:/application.yml";
+		new SpringApplicationBuilder(SinglePageApplication.class)
+				.properties(PROPERTIES).run(args);
 	}
+
 
 	@Bean
 	CommandLineRunner init(RoleRepository roleRepository) {
-
 		return args -> {
 			Role adminRole = roleRepository.findByRole("ADMIN");
 			if (adminRole == null) {
