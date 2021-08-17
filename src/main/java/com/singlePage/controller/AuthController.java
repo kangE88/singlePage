@@ -52,7 +52,6 @@ public class AuthController {
             modelAndView.addObject("successMessage", "User has been registered successfully");
             modelAndView.addObject("user", new User());
             modelAndView.setViewName("login");
-
         }
         return modelAndView;
     }
@@ -74,6 +73,6 @@ public class AuthController {
     public ModelAndView home(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("home");
-        return modelAndView;
+        return modelAndView; //test
     }
 }
